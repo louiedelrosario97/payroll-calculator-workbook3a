@@ -3,18 +3,18 @@ package com.pluralsight;
 public class Employee {
         private String employeeId;   // private data members
         private String name;
-        private double hoursWorked;
+        private double hours;
         private double payRate;
 
         // Parameterized constructor.
-    public Employee(String employeeId, String name, double hoursWorked, double payRate) {
+    public Employee(String employeeId, String name, double hours, double payRate) {
         this.employeeId = employeeId;
         this.name = name;
-        this.hoursWorked = hoursWorked;
+        this.hours = hours;
         this.payRate = payRate;
     }
  // getters and setters
-    public int getEmployeeId() { return employeeId; }
+    public String getEmployeeId() { return employeeId; }
 
     public void setEmployeeId(String employeeId) { this.employeeId = employeeId; }
 
@@ -22,9 +22,9 @@ public class Employee {
 
     public void setName(String name) { this.name = name; }
 
-    public double getHoursWorked() { return hoursWorked; }
+    public double getHours() { return hours; }
 
-    public void setHoursWorked(double hoursWorked) { this.hoursWorked = hoursWorked; }
+    public void setHours(double hours) { this.hours = hours; }
 
     public double getPayRate() { return payRate; }
 
@@ -32,7 +32,7 @@ public class Employee {
 
 
     // getGrossPay(), this calculates and returns that employee's gross pay based on their hours worked and pay rate.
-    double grossPay() { return hoursWorked * payRate; }
+    double grossPay() { return hours * payRate; }
 }
 
 

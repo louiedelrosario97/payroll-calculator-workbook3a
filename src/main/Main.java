@@ -10,25 +10,29 @@ public class Main
 {
     static void main(String[] args)
     {
-
         try {
             FileReader fileReader = new FileReader("employee-data.csv");
             BufferedReader bufferedReader = new BufferedReader(fileReader);
+            bufferedReader.readLine();
 
-            String line = bufferedReader.readLine();
-            line = reader.readLine();
+            String line;
+            line = bufferedReader.readLine();
             while(line != null)
             {
-
                 String[]columns = line.split("\\|");
 
                 String id = columns [0];
                 String name = columns [1];
                 double hours = Double.parseDouble(columns [2]);
-                double payrate = Double.parseDouble(columns [3]);
+                double rate = Double.parseDouble(columns [3]);
 
-                Employee employee = new Employee(id, name, hours, payrate);
+                Employee employee = new Employee(id, name, hours, rate);
+
+                System.out.printf(employee.getEmployeeId() + employee.getName() + employee.getHours() + employee.getPayRate());
+
+                line = bufferedReader.readLine();
             }
+            bufferedReader.close();
         } catch (IOException e) {
             e.printStackTrace();
 
