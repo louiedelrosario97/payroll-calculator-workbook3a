@@ -9,7 +9,9 @@ import java.io.IOException;
 public class Main
 {
     static void main(String[] args)
-    {
+
+    {       System.out.println("ID  NAME       HOURS PAYRATE");
+
         try {
             FileReader fileReader = new FileReader("employee-data.csv");
             BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -27,8 +29,7 @@ public class Main
                 double rate = Double.parseDouble(columns [3]);
 
                 Employee employee = new Employee(id, name, hours, rate);
-
-                System.out.printf(employee.getEmployeeId() + employee.getName() + employee.getHours() + employee.getPayRate());
+                System.out.println(employee.getEmployeeId() + "   " + employee.getName() + "   " + employee.getHours() + "  "  + employee.getPayRate());
 
                 line = bufferedReader.readLine();
             }
