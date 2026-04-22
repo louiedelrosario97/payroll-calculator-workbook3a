@@ -1,19 +1,34 @@
 package main;
 
+import com.pluralsight.Employee;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class Main {
-    public static void main(String[] args) {
+public class Main
+{
+    static void main(String[] args)
+    {
 
-        String employeeData = "employee-data.csv";
         try {
-            FileReader fileReader = new FileReader(employeeData);
+            FileReader fileReader = new FileReader("employee-data.csv");
             BufferedReader bufferedReader = new BufferedReader(fileReader);
 
-            System.out.println(bufferedReader.readLine()); // We can read the file with this line, now we need to make a while loop to read the info we want
+            String line = bufferedReader.readLine();
+            line = reader.readLine();
+            while(line != null)
+            {
 
+                String[]columns = line.split("\\|");
+
+                String id = columns [0];
+                String name = columns [1];
+                double hours = Double.parseDouble(columns [2]);
+                double payrate = Double.parseDouble(columns [3]);
+
+                Employee employee = new Employee(id, name, hours, payrate);
+            }
         } catch (IOException e) {
             e.printStackTrace();
 

@@ -1,13 +1,13 @@
 package com.pluralsight;
 
 public class Employee {
-        private int employeeId;   // private data members
+        private String employeeId;   // private data members
         private String name;
         private double hoursWorked;
         private double payRate;
 
         // Parameterized constructor.
-    public Employee(int employeeId, String name, double hoursWorked, double payRate) {
+    public Employee(String employeeId, String name, double hoursWorked, double payRate) {
         this.employeeId = employeeId;
         this.name = name;
         this.hoursWorked = hoursWorked;
@@ -16,7 +16,7 @@ public class Employee {
  // getters and setters
     public int getEmployeeId() { return employeeId; }
 
-    public void setEmployeeId(int employeeId) { this.employeeId = employeeId; }
+    public void setEmployeeId(String employeeId) { this.employeeId = employeeId; }
 
     public String getName() { return name; }
 
